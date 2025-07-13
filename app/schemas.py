@@ -18,13 +18,13 @@ class TodoCreate(TodoBase):
 class TodoUpdate(TodoBase):
     pass
 
-class TodoOut(TodoBase):
+class TodoResponse(TodoBase):
     id: int
     owner_id: int
     created_at: datetime
 
     class Config:
-        orm_mode = True
+        orm_mode = True # Make Pydantic model compatible with ORM objects (orm objects can be converted to dict)
 
 class UserBase(BaseModel):
     username: str
@@ -33,9 +33,9 @@ class UserBase(BaseModel):
 class UserCreate(UserBase):
     password: str
 
-class UserOut(UserBase):
+class UserResponse(UserBase):
     id: int
-    todos: List[TodoOut] = []
+    todos: List[TodoResponse] = []
 
     class Config:
         orm_mode = True
