@@ -1,3 +1,5 @@
+# Define the shape of data for requests and responses (validation and serialization)
+
 from pydantic import BaseModel, EmailStr
 from typing import Optional, List
 from datetime import datetime

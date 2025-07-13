@@ -1,3 +1,5 @@
+# Define the structure of database tables
+
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 from app.db import Base
