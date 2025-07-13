@@ -24,7 +24,7 @@ class TodoResponse(TodoBase):
     created_at: datetime
 
     class Config:
-        orm_mode = True # Make Pydantic model compatible with ORM objects (orm objects can be converted to dict)
+        from_attributes = True # Make Pydantic model compatible with ORM objects (orm objects can be converted to dict)
 
 class UserBase(BaseModel):
     username: str
@@ -38,4 +38,4 @@ class UserResponse(UserBase):
     todos: List[TodoResponse] = []
 
     class Config:
-        orm_mode = True
+        from_attributes = True
